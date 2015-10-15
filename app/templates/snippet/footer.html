@@ -1,0 +1,16 @@
+<nav class="navbar navbar-inverse navbar-fixed-bottom">
+  {% block foot_bar %}
+      <div class="container-fluid">
+        {% if not user %}
+        <a  class="btn btn-default navbar-btn pull-right" href="/account/signin">登陆</a>
+        {% else %}
+        <a  class="btn btn-default navbar-btn pull-right">管理</a>
+        {% endif %}
+        <a  class="btn btn-default navbar-btn pull-right" style="margin-right: 10px" href="/account/signup">注册</a>
+      </div>
+  {% endblock %}
+</nav>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="{{ url_for('static',filename='js/bootstrap.min.js')}}"></script>

@@ -1,0 +1,6 @@
+<form method="POST" action="">
+    {{ form.csrf_token }}
+    {{ form.phone(class='form-control login-field',placeholder='手机号') }}
+    {{ form.password(class='form-control login-field',placeholder='密码') }}
+    <input type="submit" value="提交">
+</form>
