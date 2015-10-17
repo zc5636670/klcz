@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block top %}
+    <a class="btn btn-default btn-block" href="/" role="button">返回</a>
+    <div class="container-fluid">
+        {% for game in allgames %}
+            {% if not game.id in installed_game %}
+            <div class="container-fluid" style="margin-top: 15px; font-size: 16px">
+                <div class="bg-primary" style="text-align: center;padding: 10px;">{{game.name}}</div>
+                <div class="bg-info">
+                    <span>{{game.description}}</span>
+                </div>
+                <div class="bg-success">
+                    <span>{{game.template}}</span>
+                </div>
+                <div class="bg-info">
+                    <span>{{game.online}}</span>
+                </div>
+                <div class="bg-success" style="text-align: right">
+                    <a class="btn" href="user_add_game_{{game.id}}">添加</a>
+                </div>
+            </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endblock %}

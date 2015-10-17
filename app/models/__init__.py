@@ -1,10 +1,10 @@
 # coding: utf-8
 # flake8: noqa
-
+#CREATE DATABASE ooxx DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 from ._base import *
 from .account import *
 from .discount import *
-from .game import *
+from .game import Game
 from flask.ext.sqlalchemy import models_committed
 
 

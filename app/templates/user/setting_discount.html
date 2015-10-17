@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block top %}
+    <a class="btn btn-default btn-block" href="./" role="button">返回</a>
+    <div class="container-fluid">
+        {% for k, v in info.items(): %}
+        <div class="bg-success">
+                <span>【{{k}}】</span><input class="info_collector" type="text" value="{{v}}" id="{{k}}">
+            </div>
+        {% endfor %}
+        <button type="button" id="tijiao">提交</button>
+    </div>
+    <div id="result"></div>
+    <script type="text/javascript">
+        $('#tijiao').click(function(){
+            var return_info="";
+            $(".info_collector").each(function(){
+                return_info+='"'+$(this).attr('id')+'":"'+$(this).val()+'"';
+            })
+            return_info="{"+return_info+"}";
+            $("#return_value").attr('value','return_info');
+            $.get('get_discount_info_'+{{did}}+"_"+return_info,function(data){
+                alert(data);
+            })
+        });
+    </script>
+{% endblock %}

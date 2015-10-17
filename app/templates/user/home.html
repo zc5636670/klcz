@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block top %}
+    <a class="btn btn-default btn-block" href="/" role="button">返回</a>
+<div class="container-fluid">
+    <div class="bg-primary" style="text-align: center;padding: 5px;margin-top: 10px">店铺信息</div>
+    <div class="bg-success">
+        <p>{{user.full_name}}</p>
+        <a class="btn btn-default" href="setting" role="button">更新店铺信息</a>
+    </div>
+
+    <div class="bg-primary" style="text-align: center;padding: 5px;margin-top: 10px">已选中的游戏</div>
+    <div class="bg-success">
+        {% for one in games %}
+            <div class="container bg-danger" style=""><span>【名称】</span> <span>{{ one.name }}</span>
+
+            {{ one.description}}
+            <a class="btn btn-default " href="update_game_{{one.id}}" role="button">设置</a>
+            </div>
+        {% endfor %}
+        <a class="btn btn-default " href="add_game" role="button">添加游戏</a>
+    </div>
+
+    <!--<a class="btn btn-default btn-block" href="m_game" role="button">续费</a>-->
+</div>
+{% endblock %}

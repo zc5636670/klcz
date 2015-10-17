@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block top %}
+<div class="container-fluid">
+
+<form method="POST" action="">
+    {{ form.csrf_token }}
+    <div class="bg-primary">店铺信息</div>
+    <div class="bg-success">{{ form.screen_name(class='form-control login-field',Value=user.screen_name) }}</div>
+    <div class="bg-warning">{{ form.full_name(class='form-control login-field',Value=user.full_name)}}</div>
+    <div class="bg-success">{{ form.description(class='form-control login-field', Value=user.description) }}</div>
+    <input type="submit" value="提交">
+</form>
+</div>
+{% endblock %}

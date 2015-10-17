@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block top %}
+<a class="btn btn-default btn-block" href="./" role="button">返回</a>
+<a class="btn btn-default btn-block" href="./m_add_game" role="button">添加游戏</a>
+{% for game in games %}
+<div class="container-fluid" style="margin-top: 15px; font-size: 16px">
+    <div class="bg-primary" style="text-align: center;padding: 10px;">{{game.name}}</div>
+        <div class="bg-warning"><span>【描述】</span>{{game.description}} </div>
+        <div class="bg-success"><span>【模板】</span>{{game.template}} </div>
+        <div class="bg-warning"><span>【信息】</span>{{game.info_need}}</div>
+        <div class="bg-success"><span>【上线】</span>{{game.online}} </div>
+    <div class="bg-warning" style="text-align: right">
+        <a class="btn" href="delete_game_{{game.id}}">删除</a>
+        <a class="btn" href="update_game_{{game.id}}">修改</a>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}

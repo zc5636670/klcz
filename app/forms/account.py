@@ -1,18 +1,18 @@
-# coding: utf-8
+#coding=utf-8
+import sys
+reload(sys)
+sys.setdefaultencoding('utf8')
 
 from flask import current_app
 from flask_wtf import Form
 from wtforms import TextField, PasswordField, BooleanField,StringField
-from wtforms import TextAreaField
-from wtforms.fields.html5 import EmailField, URLField
 from wtforms.validators import DataRequired, Email, Length, Regexp
-from wtforms.validators import Optional, URL
 
 from ..models import Account
 
 __all__ = [
-    'SignupForm',
-    #'SigninForm', 'SettingForm',
+    'SignupForm', 'SigninForm',
+    #'SettingForm',
     #'FindForm', 'ResetForm',
 ]
 

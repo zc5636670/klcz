@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% block top %}
+<a class="btn btn-default btn-block" href="./m_game" role="button">返回</a>
+<div class="container-fluid" style="margin-top: 15px; font-size: 16px">
+
+    <form method="post" action="">
+                {{ form.csrf_token }}
+    <div class="bg-success" style="padding: 10px;">
+        【名称】：{{form.name(style='width:80%',Value=game.name,class='')}}</div>
+    <div class="bg-info" style="padding: 10px;">
+        【描述】：{{form.description(style='width:80%')}}
+    </div>
+    <div class="bg-success" style="padding: 10px;">
+        【模板】：{{ form.template(Value=game.template,style='width:80%')}}
+    </div>
+    <div class="bg-success" style="padding: 10px;">
+        【信息】：{{ form.info_need(style='width:80%')}}
+    </div>
+    <div class="bg-info" style="padding: 10px;">
+        【上线】：{{ form.online(Value=game.online,style='width:80%')}}
+    </div>
+    <div class="bg-success" style="text-align: right">
+        <input type="submit" class="btn"></input>
+    </div>
+        </form>
+</div>
+<script type="text/javascript">
+    $("#description").html('{{game.description}}');
+    $("#info_need").html('{{game.info_need}}');
+</script>
+{% endblock %}

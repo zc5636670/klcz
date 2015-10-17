@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block top %}
+<div class="container-fluid">
+    <a class="btn btn-default btn-block" href="./" role="button">返回</a>
+    <form method="post" action="">
+            {{ form.csrf_token }}
+    <h3>你希望将</h3>
+    {{form.phone(class="form-control")}}
+    <h3>的角色调整为：</h3>
+    {{form.role(class="form-control")}}
+        <input class="form-control" type="submit" value="提交">
+    </form>
+    {{user}}
+</div>
+{% endblock %}

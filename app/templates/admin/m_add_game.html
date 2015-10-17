@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block top %}
+<div class="container-fluid">
+    <a class="btn btn-default btn-block" href="./m_game" role="button">返回</a>
+    <form method="post" action="">
+            {{ form.csrf_token }}
+        <div class="bg-success" ><span>【名称】</span>{{form.name(style="width: 80%")}} </div>
+        <div class="bg-warning"><span>【描述】</span>{{form.description(style="width: 80%")}} </div>
+        <div class="bg-success"><span>【模板】</span>{{form.template(style="width: 80%")}} </div>
+        <div class="bg-warning"><span>【信息】</span>{{form.info_need(style="width: 80%")}}</div>
+        <div class="bg-success"><span>【上线】</span>{{form.online(style="width: 80%")}} </div>
+        <input class="form-control" type="submit" value="提交">
+    </form>
+    {{msg}}
+</div>
+{% endblock %}

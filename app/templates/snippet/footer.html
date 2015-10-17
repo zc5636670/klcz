@@ -1,7 +1,7 @@
 <nav class="navbar navbar-inverse navbar-fixed-bottom">
   {% block foot_bar %}
       <div class="container-fluid">
-        {% if not user %}
+        {% if not g %}
         <a  class="btn btn-default navbar-btn pull-right" href="/account/signin">登陆</a>
         {% else %}
         <a  class="btn btn-default navbar-btn pull-right">管理</a>

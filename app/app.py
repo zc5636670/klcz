@@ -1,3 +1,8 @@
+#coding=utf-8
+import sys
+reload(sys)
+sys.setdefaultencoding('utf8')
+
 import os
 import time
 import datetime
@@ -14,11 +19,12 @@ def create_app():
 
 
 def register_routes(app):
-    from views import front, user, staff, admin, account
+    from views import front, user, staff, admin, account,game
     app.register_blueprint(account.bp, url_prefix='/account')
     app.register_blueprint(staff.bp, url_prefix='/staff')
     app.register_blueprint(user.bp, url_prefix='/user')
     app.register_blueprint(admin.bp, url_prefix='/admin')
+    app.register_blueprint(game.bp, url_prefix='/game')
     app.register_blueprint(front.bp, url_prefix='')
     return app
 def register_database(app):

@@ -1,3 +1,7 @@
+#coding=utf-8
+import sys
+reload(sys)
+sys.setdefaultencoding('utf8')
 from flask import Blueprint
 from flask import request, flash, current_app
 from flask import render_template, redirect, url_for, g
